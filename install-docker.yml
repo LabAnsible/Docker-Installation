@@ -1,0 +1,12 @@
+---
+- name: Install and start docker service on centOs 
+  hosts: all
+  tasks: 
+    - name: Install docker 
+      yum: name=docker
+    
+    - name: Enable and start docker service
+      service: 
+        name: docker
+        enabled: yes
+        state: started 
